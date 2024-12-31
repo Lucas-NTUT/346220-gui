@@ -1,0 +1,36 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "features": {
+    "desktop-lite": {
+    "password": "vscode",
+    "webPort": "6080",
+    "vncPort": "5901"
+    }
+  },
+  "forwardPorts": [6080, 5901],
+  "portsAttributes": {
+    "5901": {
+      "label": "VNC"
+    },
+    "6080": {
+      "label": "WEB VNC"
+    }
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "postCreateCommand": "",
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    },
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python"
+      ]
+    }
+  }
+}
